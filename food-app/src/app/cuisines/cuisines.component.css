@@ -1,0 +1,17 @@
+.container{
+    text-align: center !important;
+    align-items: center !important;
+    font-size: larger;
+    /* width: 400px; */
+}
+
+form{
+    align-items: center;
+    text-align: left;
+    margin-top: -10px;
+}
+
+button{
+    text-align: center !important;
+    align-items: center;
+}

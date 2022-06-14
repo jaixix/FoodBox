@@ -1,0 +1,110 @@
+<div class="contianer" style="width: 530px">
+  <div class="row m-3" id="heading">
+    <h2>Add A Cuisine!</h2>
+  </div>
+  <form #f="ngForm">
+    <div class="row m-3">
+      <div class="form-group">
+        <div class="col">
+          <label for="name"><strong>Item Name</strong></label>
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            placeholder="Add Name"
+            [(ngModel)]="cName"
+            required
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row m-3">
+      <div class="form-group">
+        <div class="col">
+          <label for="description"><strong>Item Description</strong></label>
+          <input
+            type="text"
+            class="form-control"
+            name="description"
+            placeholder="Add Description"
+            [(ngModel)]="cDescription"
+            required
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row m-3">
+      <div class="form-group">
+        <div class="col">
+          <label for="price"><strong>Item Price</strong></label>
+          <input
+            type="text"
+            class="form-control"
+            name="price"
+            placeholder="Add Price"
+            [(ngModel)]="cPrice"
+            required
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row m-3">
+      <div class="form-group">
+        <div class="col">
+          <label for="price"><strong>Item Stock</strong></label>
+          <input
+            type="text"
+            class="form-control"
+            name="stock"
+            placeholder="Add Stock"
+            [(ngModel)]="cStock"
+            required
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row m-3">
+      <div class="form-group">
+        <div class="col">
+          <label for="status"><strong>Item Status</strong></label>
+          <select
+            name="status"
+            class="form-control"
+            [(ngModel)]="cStatus"
+            required
+          >
+            <option value="">Add Status</option>
+            <option value="Active">Active</option>
+            <option value="In-Active">In-Active</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row m-3">
+      <div class="col">
+        <button
+          class="btn btn-primary"
+          [disabled]="!f.valid"
+          (click)="createItem(f.value)"
+        >
+          Submit Item
+        </button>
+        |
+        <button class="btn btn-primary" (click)="clearParams()">
+          Clear Form
+        </button>
+      </div>
+    </div>
+    <div class="row m-3">
+      <div class="col">
+        <button class="btn btn-success btn-sm" (click)="fetchCusines()">
+          Fetch Cuisines
+        </button>
+        |
+        <button class="btn btn-danger btn-sm" (click)="onClearCuisines()">
+          Clear Cuisines
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

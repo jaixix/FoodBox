@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <ul class="nav nav-tabs">
+        <li
+          role="presentation"
+          class="nav-item"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>
+        <li
+          role="presentation"
+          class="nav-item"
+          routerLinkActive="active"
+          *ngIf="loginToken == 1"
+        >
+          <a class="nav-link" routerLink="addcuisine">Add Cuisines</a>
+        </li>
+        <li
+          role="presentation"
+          class="nav-item"
+          routerLinkActive="active"
+          *ngIf="loginToken == 1 || loginToken == 0"
+        >
+          <a class="nav-link" routerLink="viewcuisines">View Cuisines</a>
+        </li>
+        <li
+          role="presentation"
+          class="nav-item"
+          routerLinkActive="active"
+          *ngIf="loginToken == 1"
+        >
+          <a class="nav-link" routerLink="adduser">Add Users</a>
+        </li>
+        <li
+          role="presentation"
+          class="nav-item"
+          routerLinkActive="active"
+          *ngIf="loginToken == 1"
+        >
+          <a class="nav-link" routerLink="viewusers">View Users</a>
+        </li>
+        <li
+          role="presentation"
+          class="nav-item"
+          routerLinkActive="active"
+          id="login"
+          *ngIf="loginToken == -1"
+        >
+          <a class="nav-link" routerLink="login">Login</a>
+        </li>
+        <li
+          role="presentation"
+          class="nav-item"
+          routerLinkActive="active"
+          id="register"
+          *ngIf="loginToken == -1"
+        >
+          <a class="nav-link" routerLink="register">Register</a>
+        </li>
+        <li
+          role="presentation"
+          class="nav-item"
+          routerLinkActive="active"
+          id="logout"
+          *ngIf="loginToken == 1 || loginToken == 0"
+          (click)="onLogout()"
+        >
+          <a class="nav-link" routerLink="viewblogs">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

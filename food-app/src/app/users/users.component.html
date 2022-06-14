@@ -1,0 +1,90 @@
+<div class="contianer" style="width: 530px">
+  <div class="row m-3" id="heading">
+    <h2>Add A User!</h2>
+  </div>
+  <form #f="ngForm">
+    <div class="row m-3">
+      <div class="form-group">
+        <div class="col">
+          <label for="name"><strong>User Name</strong></label>
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            placeholder="Add Name"
+            [(ngModel)]="uName"
+            required
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row m-3">
+      <div class="form-group">
+        <div class="col">
+          <label for="description"><strong>User Email ID</strong></label>
+          <input
+            type="text"
+            class="form-control"
+            name="emailId"
+            placeholder="Add Email ID"
+            [(ngModel)]="uEmailId"
+            required
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row m-3">
+      <div class="form-group">
+        <div class="col">
+          <label for="price"><strong>User Password</strong></label>
+          <input
+            type="text"
+            class="form-control"
+            name="password"
+            placeholder="Add Password"
+            [(ngModel)]="uPassword"
+            required
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row m-3">
+      <div class="form-group">
+        <div class="col">
+          <label for="status"><strong>User Role</strong></label>
+          <select name="role" class="form-control" [(ngModel)]="uRole" required>
+            <option value="">Add User Role</option>
+            <option value="Admin">Admin</option>
+            <option value="Consumer">Consumer</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row m-3">
+      <div class="col">
+        <button
+          class="btn btn-primary"
+          [disabled]="!f.valid"
+          (click)="createUser(f.value)"
+        >
+          Submit User
+        </button>
+        |
+        <button class="btn btn-primary" (click)="clearParams()">
+          Clear Form
+        </button>
+      </div>
+    </div>
+    <div class="row m-3">
+      <div class="col">
+        <button class="btn btn-success btn-sm" (click)="fetchUsers()">
+          Fetch Users
+        </button>
+        |
+        <button class="btn btn-danger btn-sm" (click)="onClearUsers()">
+          Clear Users
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

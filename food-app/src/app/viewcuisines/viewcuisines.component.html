@@ -1,0 +1,37 @@
+<div class="noposts" *ngIf="fetchedItems.length < 1">
+  <h2>We're waiting for your first Cuisine!</h2>
+  <hr />
+  <h3>No Cuisines available!!</h3>
+</div>
+
+<div class="container" style="width: 500px">
+  <div class="row m-3">
+    <div class="col">
+      <ul class="list-group">
+        <div *ngFor="let food of fetchedItems; let i = index">
+          <li class="list-group-item" *ngIf="fetchedItems[i].id != 'null'">
+            <h5>Item Name : {{ food.name }}</h5>
+            <p>Item Price : {{ food.price }}</p>
+            <p>Item Stock : {{ food.stock }}</p>
+            <p>Item Status : {{ food.status }}</p>
+            <p>Item Description : {{ food.description }}</p>
+            <button
+              class="btn btn-sm btn-success"
+              (click)="editItem(fetchedItems[i])"
+            >
+              Edit
+            </button>
+            |
+            <button
+              class="btn btn-sm btn-danger"
+              (click)="fetchedItems[i].id = 'null'"
+            >
+              Delete
+            </button>
+            <br />
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>

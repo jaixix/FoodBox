@@ -1,0 +1,15 @@
+.noposts{
+    margin-top: 15%;
+    text-align: center;
+    align-items: center;
+}
+
+li{
+    text-align: center;
+    align-items: center;
+}
+
+.btn{
+    width:60px;
+    align-items: center;
+}

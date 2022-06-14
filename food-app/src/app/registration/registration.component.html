@@ -1,0 +1,63 @@
+<div class="contianer" style="width: 530px">
+  <div class="row m-3" id="heading">
+    <h2>Register To Food App!</h2>
+  </div>
+  <form #f="ngForm">
+    <div class="row m-3">
+      <div class="form-group">
+        <div class="col">
+          <label for="name"><strong>Enter Email ID</strong></label>
+          <input
+            type="text"
+            class="form-control"
+            name="emailId"
+            placeholder="Enter Registered Email ID"
+            [(ngModel)]="emailId"
+            required
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row m-3">
+      <div class="form-group">
+        <div class="col">
+          <label for="description"><strong>Enter Password</strong></label>
+          <input
+            type="text"
+            class="form-control"
+            name="password"
+            placeholder="Enter Registered Password"
+            [(ngModel)]="password"
+            required
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row m-3">
+      <div class="form-group">
+        <div class="col">
+          <label for="role"><strong>Role</strong></label>
+          <select name="role" [(ngModel)]="role" class="form-control">
+            <option value="">Select Role</option>
+            <option value="Consumer">Consumer</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row m-3">
+      <div class="col">
+        <button
+          class="btn btn-primary"
+          [disabled]="!f.valid"
+          (click)="registerUser(f.value)"
+        >
+          Register
+        </button>
+        |
+        <button class="btn btn-primary" (click)="redirectToLogin()">
+          Login
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
