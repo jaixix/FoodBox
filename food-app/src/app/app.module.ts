@@ -13,6 +13,8 @@ import { ViewusersComponent } from './viewusers/viewusers.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { CookieService } from 'ngx-cookie-service';
+import { ViewcuisinesuserComponent } from './viewcuisinesuser/viewcuisinesuser.component';
+import { CartComponent } from './cart/cart.component';
 // import { CookieService } from 'ngx-cookie-service';
 
 const appRoutes: Routes = [
@@ -23,6 +25,8 @@ const appRoutes: Routes = [
   { path: 'viewusers', component:ViewusersComponent},
   { path: 'login', component:LoginComponent},
   { path: 'register', component:RegistrationComponent},
+  { path: 'viewcuisinesuser', component:ViewcuisinesuserComponent},
+  { path: 'usercart', component:CartComponent},
 ];
 
 @NgModule({
@@ -34,7 +38,9 @@ const appRoutes: Routes = [
     UsersComponent,
     ViewusersComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ViewcuisinesuserComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

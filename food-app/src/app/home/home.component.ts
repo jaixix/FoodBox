@@ -15,5 +15,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  loginToken = this.loginService.getLoginToken();
+  loginToken = this.cookieService.get('loginToken');
+  
 }

@@ -1,17 +1,20 @@
 .container{
-    text-align: center !important;
+    text-align: center !important; 
     align-items: center !important;
-    font-size: larger;
-    /* width: 400px; */
+    padding-left: 200px;
 }
 
 form{
-    align-items: center;
-    text-align: left;
-    margin-top: -10px;
+    text-align: center !important; 
+    align-items: center !important;
 }
 
-button{
-    text-align: center !important;
-    align-items: center;
+h2{
+    text-align: center !important; 
+    align-items: center !important;
+}
+
+hr{
+    width:0px;
+    margin-bottom: 70px;
 }

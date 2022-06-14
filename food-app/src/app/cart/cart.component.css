@@ -1,0 +1,28 @@
+.noposts{
+    margin-top: 15%;
+    text-align: center;
+    align-items: center;
+}
+
+li{
+    text-align: center;
+    align-items: center;
+}
+
+.btn{
+    width:90px;
+    align-items: center;
+}
+
+.cartmessage{
+    text-align: center;
+    align-items: center;
+}
+
+.cartmessage hr{
+    width: 700px;
+    align-items: center;
+    text-align: center;
+    margin-left: 300px;
+    margin-bottom: 80px !important;
+}

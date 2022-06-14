@@ -2,15 +2,30 @@
 <div class="container" style="width: 1000px">
   <div class="row">
     <h2 class="display-1">Welcome to FoodBox</h2>
-    <h3 *ngIf="loginToken == -1">Please Login/SignUp to continue.</h3>
-    <h3 class="display-2" *ngIf="loginToken == 1">[ Admin Portal ]</h3>
-    <h3 class="display-2" *ngIf="loginToken == 0">[ User Portal ]</h3>
+    <h3 *ngIf="loginToken === '-1'">Please Login/SignUp to continue.</h3>
+    <h3 class="display-2" *ngIf="loginToken === '1'">[ Admin Portal ]</h3>
+    <h3 class="display-2" *ngIf="loginToken === '0'">[ User Portal ]</h3>
     <hr />
   </div>
-
-  <div class="row">
+  <div class="row" class="logoutoptions" *ngIf="loginToken === '-1'">
     <ul class="list-group">
-      <div class="cuisineoptions" *ngIf="loginToken == 1">
+      <div>
+        <li>
+          <a href="login"
+            ><button class="btn btn-outline-success">Login</button></a
+          >
+        </li>
+        <li>
+          <a href="register">
+            <button class="btn btn-outline-danger">Register</button></a
+          >
+        </li>
+      </div>
+    </ul>
+  </div>
+  <div class="row" *ngIf="loginToken === '1'">
+    <ul class="list-group">
+      <div class="cuisineoptions">
         <h5 id="cuisineheader">Cuisine Actions</h5>
         <li>
           <a href="addcuisine"
@@ -33,7 +48,7 @@
           >
         </li>
       </div>
-      <div class="useroptions" *ngIf="loginToken == 1">
+      <div class="useroptions" *ngIf="loginToken === '1'">
         <h5 id="userheader">User Actions</h5>
         <li>
           <a href="adduser">
@@ -53,6 +68,24 @@
         <li>
           <a href="viewusers">
             <button class="btn btn-outline-danger">Delete Users</button></a
+          >
+        </li>
+      </div>
+    </ul>
+  </div>
+
+  <div class="row">
+    <ul class="list-group">
+      <div class="mainuseroptions" *ngIf="loginToken === '0'">
+        <h4 id="mainuserheader">Actions</h4>
+        <li>
+          <a href="viewcuisinesuser"
+            ><button class="btn btn-outline-success">View Cuisines</button></a
+          >
+        </li>
+        <li>
+          <a href="usercart">
+            <button class="btn btn-outline-primary">Go To Cart</button></a
           >
         </li>
       </div>

@@ -1,7 +1,6 @@
 .container{
     text-align: center !important; 
     align-items: center !important;
-    padding-left: 200px;
 }
 
 form{
@@ -12,4 +11,9 @@ form{
 h2{
     text-align: center !important; 
     align-items: center !important;
+}
+
+hr{
+    width:0px;
+    margin-bottom: 80px;
 }

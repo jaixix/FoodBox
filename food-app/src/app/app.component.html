@@ -14,7 +14,7 @@
           role="presentation"
           class="nav-item"
           routerLinkActive="active"
-          *ngIf="loginToken == 1"
+          *ngIf="loginToken === '1'"
         >
           <a class="nav-link" routerLink="addcuisine">Add Cuisines</a>
         </li>
@@ -22,7 +22,7 @@
           role="presentation"
           class="nav-item"
           routerLinkActive="active"
-          *ngIf="loginToken == 1 || loginToken == 0"
+          *ngIf="loginToken === '1'"
         >
           <a class="nav-link" routerLink="viewcuisines">View Cuisines</a>
         </li>
@@ -30,7 +30,15 @@
           role="presentation"
           class="nav-item"
           routerLinkActive="active"
-          *ngIf="loginToken == 1"
+          *ngIf="loginToken === '0'"
+        >
+          <a class="nav-link" routerLink="viewcuisinesuser">View Cuisines</a>
+        </li>
+        <li
+          role="presentation"
+          class="nav-item"
+          routerLinkActive="active"
+          *ngIf="loginToken == '1'"
         >
           <a class="nav-link" routerLink="adduser">Add Users</a>
         </li>
@@ -38,7 +46,7 @@
           role="presentation"
           class="nav-item"
           routerLinkActive="active"
-          *ngIf="loginToken == 1"
+          *ngIf="loginToken == '1'"
         >
           <a class="nav-link" routerLink="viewusers">View Users</a>
         </li>
@@ -46,8 +54,16 @@
           role="presentation"
           class="nav-item"
           routerLinkActive="active"
+          *ngIf="loginToken == '0'"
+        >
+          <a class="nav-link" routerLink="usercart">View Cart</a>
+        </li>
+        <li
+          role="presentation"
+          class="nav-item"
+          routerLinkActive="active"
           id="login"
-          *ngIf="loginToken == -1"
+          *ngIf="loginToken == '-1'"
         >
           <a class="nav-link" routerLink="login">Login</a>
         </li>
@@ -56,7 +72,7 @@
           class="nav-item"
           routerLinkActive="active"
           id="register"
-          *ngIf="loginToken == -1"
+          *ngIf="loginToken == '-1'"
         >
           <a class="nav-link" routerLink="register">Register</a>
         </li>
@@ -65,7 +81,7 @@
           class="nav-item"
           routerLinkActive="active"
           id="logout"
-          *ngIf="loginToken == 1 || loginToken == 0"
+          *ngIf="loginToken == '1' || loginToken == '0'"
           (click)="onLogout()"
         >
           <a class="nav-link" routerLink="viewblogs">Logout</a>

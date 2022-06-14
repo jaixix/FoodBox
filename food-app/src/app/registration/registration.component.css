@@ -13,3 +13,8 @@ h2{
     text-align: center !important; 
     align-items: center !important;
 }
+
+hr{
+    width:0px;
+    margin-bottom: 70px;
+}

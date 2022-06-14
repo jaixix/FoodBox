@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 import { map } from 'rxjs';
 import { LoginServiceService } from '../login-service.service';
 import { UserData } from '../users/userData.model';
@@ -13,7 +14,7 @@ import { LoginData } from './login.model';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private http : HttpClient, private router : Router, private loginService : LoginServiceService) { }
+  constructor(private http : HttpClient, private router : Router, private loginService : LoginServiceService, private cookieService : CookieService) { }
 
   ngOnInit(): void {
   }
@@ -34,13 +35,15 @@ export class LoginComponent implements OnInit {
       this.fetchedUsers = users;
     });
     if(loginUserData.emailId==="admin1@gmail.com" && loginUserData.password==="admin1"){
-      this.loginService.setLoginToken(1);
-      console.log(this.loginService.getLoginToken());
+      // this.loginService.setLoginToken(1);
+      this.cookieService.set('loginToken', '1');
+      // console.log(this.loginService.getLoginToken());
       this.router.navigateByUrl('/');
     }
     else if(loginUserData.emailId==="user1@gmail.com" && loginUserData.password==="user1"){
-      this.loginService.setLoginToken(0);
-      console.log(this.loginService.getLoginToken());
+      // this.loginService.setLoginToken(0);
+      this.cookieService.set('loginToken', '0');
+      // console.log(this.loginService.getLoginToken());
       this.router.navigateByUrl('/'); 
     }
   }
