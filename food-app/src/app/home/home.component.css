@@ -81,7 +81,7 @@ hr{
     display: contents;
 }
 
-.mainuseroptions .btn{
+.mainuseroptions .btn .btnuser{
     align-items: center;
     text-align: center;
     margin-left: 40%;

@@ -4,6 +4,23 @@
   <h3>No Cuisines available!!</h3>
 </div>
 
+<div
+  class="container"
+  style="margin-bottom: 40px; text-align: center; width: 450px"
+  *ngIf="fetchedItems.length >= 1"
+>
+  <form class="form-group">
+    <label for="searchcuisine"><h5>Search Your Favourite Cuisines!</h5></label>
+    <input
+      type="text"
+      class="form-control"
+      name="search"
+      placeholder="Enter text to search"
+      [(ngModel)]="searchText"
+    />
+  </form>
+</div>
+
 <div class="container" style="width: 500px">
   <div class="row m-3">
     <div class="col">

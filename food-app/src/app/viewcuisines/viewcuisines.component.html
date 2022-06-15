@@ -4,12 +4,29 @@
   <h3>No Cuisines available!!</h3>
 </div>
 
+<div
+  class="container"
+  style="margin-bottom: 40px; text-align: center; width: 450px"
+  *ngIf="fetchedItems.length >= 1"
+>
+  <form class="form-group">
+    <label for="searchcuisine"><h5>Search Cuisines</h5></label>
+    <input
+      type="text"
+      class="form-control"
+      name="search"
+      placeholder="Enter text to search"
+      [(ngModel)]="searchText"
+    />
+  </form>
+</div>
+
 <div class="container" style="width: 500px">
   <div class="row m-3">
     <div class="col">
       <ul class="list-group">
         <div *ngFor="let food of fetchedItems; let i = index">
-          <li class="list-group-item" *ngIf="fetchedItems[i].id != 'null'">
+          <li class="list-group-item" *ngIf="food.id != 'null'">
             <h5>Item Name : {{ food.name }}</h5>
             <p>Item Price : {{ food.price }}</p>
             <p>Item Stock : {{ food.stock }}</p>

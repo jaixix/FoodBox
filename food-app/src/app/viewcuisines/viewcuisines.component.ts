@@ -15,6 +15,7 @@ export class ViewcuisinesComponent implements OnInit {
   constructor(private http: HttpClient, private router : Router, private editService : EditServiceService) { }
   firebaseUrl = "https://foodbox-b1013-default-rtdb.firebaseio.com/foods.json";
   fetchedItems: PostData[] = [];
+  searchText = "";
   ngOnInit(): void {
     this.http.get(this.firebaseUrl).pipe(map((responseData) => {
       const foodsArray : PostData[] = [];
@@ -40,4 +41,15 @@ export class ViewcuisinesComponent implements OnInit {
     }); 
     this.router.navigateByUrl('/addcuisine');
   }
+
+  // characters = [
+  //   'Ant-Man',
+  //   'Aquaman',
+  //   'Asterix',
+  //   'The Atom',
+  //   'The Avengers',
+  //   'Batgirl',
+  //   'Batman',
+  //   'Batwoman',
+  // ];
 }

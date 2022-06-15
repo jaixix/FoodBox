@@ -62,6 +62,14 @@
           role="presentation"
           class="nav-item"
           routerLinkActive="active"
+          *ngIf="loginToken == '0'"
+        >
+          <a class="nav-link" routerLink="usercart">Order History</a>
+        </li>
+        <li
+          role="presentation"
+          class="nav-item"
+          routerLinkActive="active"
           id="login"
           *ngIf="loginToken == '-1'"
         >

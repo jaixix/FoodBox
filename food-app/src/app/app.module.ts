@@ -15,6 +15,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { CookieService } from 'ngx-cookie-service';
 import { ViewcuisinesuserComponent } from './viewcuisinesuser/viewcuisinesuser.component';
 import { CartComponent } from './cart/cart.component';
+import { FilterPipe } from './viewcuisines/filtercuisine.pipe';
 // import { CookieService } from 'ngx-cookie-service';
 
 const appRoutes: Routes = [
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
     LoginComponent,
     RegistrationComponent,
     ViewcuisinesuserComponent,
-    CartComponent
+    CartComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
